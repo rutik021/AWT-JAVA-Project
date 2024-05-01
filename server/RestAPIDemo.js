@@ -4,6 +4,7 @@ const cors = require("cors");
 const Product = require("./model/Product");
 const ContactUs = require("./model/contactUs");
 const Admin = require("./model/Admin");
+const Customer = require("./model/Customer");
 const bodyparser = require("body-parser");
 
 mongoose.connect("mongodb://localhost:27017/tiles").then(
@@ -78,6 +79,48 @@ mongoose.connect("mongodb://localhost:27017/tiles").then(
             const data = await ad.save();
             res.send(data);
         });
+
+        // Customer login API
+
+        app.post('/register', (req, res) => {
+            // To post / insert data into database
+
+            const { email, password } = req.body;
+            Customer.findOne({ email: email })
+                .then(user => {
+                    if (user) {
+                        res.json("Already registered")
+                    }
+                    else {
+                        Customer.create(req.body)
+                            .then(log_reg_form => res.json(log_reg_form))
+                            .catch(err => res.json(err))
+                    }
+                })
+
+        })
+
+        app.post('/login', (req, res) => {
+            // To find record from the database
+            const { email, password } = req.body;
+            Customer.findOne({ email: email })
+                .then(user => {
+                    if (user) {
+                        // If user found then these 2 cases
+                        if (user.password === password) {
+                            res.json("Success");
+                        }
+                        else {
+                            res.json("Wrong password");
+                        }
+                    }
+                    // If user not found then 
+                    else {
+                        res.json("No records found! ");
+                    }
+                })
+        })
+
 
         app.post("/contact", async (req, res) => {
             try {

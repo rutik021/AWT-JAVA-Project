@@ -115,7 +115,7 @@ const AdminAdd = () => {
                         })
                             .then((res) => {
                                 setTiles(Tiles);
-                                navigate("/login/admindisplay");
+                                navigate("/adminlogin/admindisplay");
                             });
                     }}
                     style={{ marginTop: '10px' }}

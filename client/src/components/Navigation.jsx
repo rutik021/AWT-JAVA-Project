@@ -45,6 +45,7 @@ export const Navigation = (props) => {
                   Products
                 </Link>
               </li>
+
             ) : (
               <li>
                 <Link to="/products" className="page-scroll">
@@ -52,6 +53,22 @@ export const Navigation = (props) => {
                 </Link>
               </li>
             )}
+
+            {isLoggedIn ? (
+              <li>
+                <Link to="/products" className="page-scroll">
+                  Cart
+                </Link>
+              </li>
+
+            ) : (
+              <li>
+                <Link to="/custlogin" className="page-scroll">
+                  Cart
+                </Link>
+              </li>
+            )}
+
 
             <li>
               <Link to="/contact" className="page-scroll">

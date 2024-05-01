@@ -1,0 +1,15 @@
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+
+const customerSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String
+});
+
+// Method to compare password
+customerSchema.methods.comparePassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+};
+
+module.exports = mongoose.model("Customer", customerSchema);
