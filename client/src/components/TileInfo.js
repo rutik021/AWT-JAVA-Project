@@ -2,7 +2,7 @@
 // import { useParams } from "react-router-dom";
 
 // function TileInfo (){
-	
+
 //     let params = useParams();
 // 	const [tile, setTile] = useState({});
 
@@ -87,75 +87,77 @@ function TileInfo() {
   let params = useParams();
 
   useEffect(() => {
-  	fetch("http://localhost:3003/product/" + params.id, {
-  		method: "GET"
-  	})
-  		.then((res) => {
-  			return res.json();
-  		})
-  		.then((res) => {
-  			setTiles(res);
-  		});
-  },[params.id]);
-  
-  const [Tiles,setTiles]=useState({tname: "",
+    fetch("http://localhost:3003/product/" + params.id, {
+      method: "GET"
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        setTiles(res);
+      });
+  }, [params.id]);
+
+  const [Tiles, setTiles] = useState({
+    tname: "",
     tsize: "",
     tquantityperbox: "",
     tpriceperbox: "",
-    tcatagory: "", 
+    tcatagory: "",
     timage: "",
-    tdescription: ""});
+    tdescription: ""
+  });
   return (
     <>
-     <div className="container mt-5 d-flex justify-content-center" 
-   style={{ marginTop: "120px" }}>
-    <div className="col-md-12">
-    <h1 className="text-center mb-4">Tile Information</h1>
-    
-                    <div className="mb-3">
-                        <label htmlFor="">Tile Name</label>
-                        <input type="text" placeholder="Enter tile name" className="form-control"
-                        value={Tiles.tname}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="">Tile size</label>
-                        <input type="text" placeholder="Enter tile size" className="form-control"
-                        value={Tiles.tsize}
-                    />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="">Tile quantity</label>
-                        <input type="text" placeholder="Enter tile quantity" className="form-control"
-                        value={Tiles.tquantityperbox}
-                    />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="">Tile price</label>
-                        <input type="text" placeholder="Enter tile price" className="form-control"
-                        value={Tiles.tpriceperbox}
-                    />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="">Tile catagory</label>
-                        <input type="text" placeholder="Enter tile catagory" className="form-control"
-                        value={Tiles.tcatagory}
-                      />
-                    </div>
-                    <div className="mb-3">
+      <div className="container mt-5 d-flex justify-content-center"
+        style={{ marginTop: "120px" }}>
+        <div className="col-md-12">
+          <h1 className="text-center mb-4">Tile Information</h1>
+
+          <div className="mb-3">
+            <label htmlFor="">Tile Name</label>
+            <input type="text" placeholder="Enter tile name" className="form-control"
+              value={Tiles.tname}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="">Tile size</label>
+            <input type="text" placeholder="Enter tile size" className="form-control"
+              value={Tiles.tsize}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="">Tile quantity</label>
+            <input type="text" placeholder="Enter tile quantity" className="form-control"
+              value={Tiles.tquantityperbox}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="">Tile price</label>
+            <input type="text" placeholder="Enter tile price" className="form-control"
+              value={Tiles.tpriceperbox}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="">Tile catagory</label>
+            <input type="text" placeholder="Enter tile catagory" className="form-control"
+              value={Tiles.tcatagory}
+            />
+          </div>
+          {/* <div className="mb-3">
                         <label htmlFor="">Tile image</label>
                         <input type="text" placeholder="Enter tile image" className="form-control"
                         value={Tiles.timage}
-                    />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="">Tile description</label>
-                        <input type="text" placeholder="Enter tile description" className="form-control"
-                        value={Tiles.tdescription}
-                    />
-                    </div>
+                    /> */}
+          {/* </div> */}
+          <div className="mb-3">
+            <label htmlFor="">Tile description</label>
+            <input type="text" placeholder="Enter tile description" className="form-control"
+              value={Tiles.tdescription}
+            />
+          </div>
         </div>
-        </div>
+      </div >
     </>
   );
 }

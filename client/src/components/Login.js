@@ -100,8 +100,8 @@ function Login() {
     AOS.init({duration:1000});
   })
   function handleLogin() {
-    const validEmail = 'abhi';
-    const validPassword = 'abhi';
+    const validEmail = 'admin';
+    const validPassword = 'admin';
 
     if (email === validEmail && password === validPassword) {
       login(); 

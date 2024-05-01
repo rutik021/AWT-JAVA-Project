@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const Product = require("./model/Product");
+const ContactUs = require("./model/contactUs");
 const Admin = require("./model/Admin");
 const bodyparser = require("body-parser");
 
@@ -77,6 +78,18 @@ mongoose.connect("mongodb://localhost:27017/tiles").then(
             const data = await ad.save();
             res.send(data);
         });
+
+        app.post("/contact", async (req, res) => {
+            try {
+                const { name, email, message } = req.body;
+                const newEntry = new ContactUs({ name, email, message });
+                await newEntry.save();
+                res.status(201).send("Message received successfully!");
+            } catch (error) {
+                res.status(500).send("Error saving message to database.");
+            }
+        });
+
 
         app.listen(3003, () => {
             console.log("server started at @3003");

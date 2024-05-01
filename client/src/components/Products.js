@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import MainCard from "./MainCard";
 import AOS from "aos";
 import 'aos/dist/aos.css';
+
 const Products = () => {
-  useEffect(()=>{
-    AOS.init({duration:1000});
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
   })
   const [mainProduct, setMainProduct] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -23,7 +24,7 @@ const Products = () => {
   return (
     <>
       <div>
-         <div className="sidebar">
+        <div className="sidebar">
           <ul className="sidebar-list">
             <li className="row" onClick={() => setFilteredRestaurant(mainProduct)}>
               <div>All products</div>
@@ -41,10 +42,10 @@ const Products = () => {
               <div>Porceline Tiles</div>
             </li>
           </ul>
-        </div> 
+        </div>
         <div className="card-list" data-aos="zoom-in">
           {filteredRestaurant.map((card) => (
-            <MainCard key={card._id} tilesMainData={card}/>
+            <MainCard key={card._id} tilesMainData={card} />
           ))}
         </div>
       </div>

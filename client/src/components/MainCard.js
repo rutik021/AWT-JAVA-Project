@@ -1,7 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
-const MainCard=(props)=>{ 
-  const {tilesMainData}=props;
+import { Link } from "react-router-dom";
+const MainCard = (props) => {
+  const { tilesMainData } = props;
 
   const cardContainerStyle = {
     display: 'flex',
@@ -39,9 +39,9 @@ const MainCard=(props)=>{
     borderRadius: '4px',
     cursor: 'pointer',
   };
-    return ( <>
+  return (<>
 
-<div style={cardContainerStyle}>
+    <div style={cardContainerStyle}>
       <div style={cardStyle}>
         <img
           src={tilesMainData.timage}
@@ -50,14 +50,13 @@ const MainCard=(props)=>{
         />
         <div style={contentStyle}>
           <h3>{tilesMainData.tname}</h3>
-          <Link to={"../product/"+tilesMainData._id}>
-          <button style={buttonStyle}>More Info</button>
+          <Link to={"../product/" + tilesMainData._id}>
+            <button style={buttonStyle}>More Info</button>
           </Link>
         </div>
       </div>
     </div>
-
-      </>
+  </>
   );
 }
 export default MainCard;
