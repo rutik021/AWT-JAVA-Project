@@ -6,7 +6,7 @@ Welcome to the Tatvam Ceramics project! This application is designed to showcase
 
 Tatvam Ceramics is a web application built using the MERN stack (MongoDB, Express.js, React, and Node.js). It features user-friendly navigation, detailed product displays, and administrative tools for product management.
 
-### Key Pages
+## Pages
 
 1. **Home**: Showcases featured products and highlights Tatvam Ceramics.
 2. **About Us**: Details the company's history, mission, and values.
