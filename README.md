@@ -42,3 +42,34 @@ Tatvam Ceramics is a web application built using the MERN stack (MongoDB, Expres
       MONGO_URI=your_mongodb_connection_string
       JWT_SECRET=your_jwt_secret
       ```
+
+5. **Run the server**:
+    ```bash
+    cd ../server
+    npm run dev
+    ```
+
+6. **Run the client**:
+    ```bash
+    cd ../client
+    npm start
+    ```
+
+The application should now be running at `http://localhost:3000`.
+
+## Usage
+
+### User Authentication
+
+- **Register**: Create a new account to access the cart and make purchases.
+- **Login**: Log in to view your cart and purchase products.
+- **Admin Login**: Access product management features as an admin.
+
+### Features
+
+- **Home Page**: Showcases featured products and company highlights.
+- **About Us Page**: Provides comprehensive information about Tatvam Ceramics.
+- **Products Page**: Explore the entire catalog of ceramic products with options to filter and search.
+- **Contact Us Page**: Fill out a form to reach out to the company.
+- **Cart**: Manage your selected products (available after login).
+- **Product Management**: Admin-only functionality to add, edit, and delete products.
